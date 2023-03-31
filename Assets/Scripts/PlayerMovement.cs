@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -13,6 +14,9 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private Animator anim;
     private float invulnerabilityT = 0;
+
+    //UI
+    [SerializeField] private Slider healthBar;
 
     private void Start()
     {
@@ -31,6 +35,10 @@ public class PlayerMovement : MonoBehaviour
 
         //Invulnerability after damage
         invulnerabilityT -= Time.deltaTime;
+
+        //UI updates
+        healthBar.maxValue = maxHealth;
+        healthBar.value = health;
     }
 
     public void GetDamage(int dmg)
