@@ -216,7 +216,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b43c10db4e9ebe247aa44b95d8d5922b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: -90
+  offset: 90
 --- !u!212 &317671216492649955
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -798,6 +798,7 @@ MonoBehaviour:
   damage: 4
   shotCD: 1
   shotPoint: {fileID: 1887695463544188907}
+  ammo: 0
 --- !u!1 &5357312506931147081
 GameObject:
   m_ObjectHideFlags: 0
@@ -822,7 +823,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5357312506931147081}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.2516, y: 0.0889, z: 0}
+  m_LocalPosition: {x: 0.2529, y: 0.0901, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
