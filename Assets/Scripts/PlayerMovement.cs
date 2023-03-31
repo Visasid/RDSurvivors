@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -13,6 +15,10 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private Animator anim;
     private float invulnerabilityT = 0;
+
+    //UI
+    [SerializeField] private Slider healthBar;
+    [SerializeField] private TMP_Text healthTxt;
 
     private void Start()
     {
@@ -31,6 +37,11 @@ public class PlayerMovement : MonoBehaviour
 
         //Invulnerability after damage
         invulnerabilityT -= Time.deltaTime;
+
+        //UI updates
+        healthBar.maxValue = maxHealth;
+        healthBar.value = health;
+        healthTxt.text = health.ToString() + "/" + maxHealth.ToString();
     }
 
     public void GetDamage(int dmg)
