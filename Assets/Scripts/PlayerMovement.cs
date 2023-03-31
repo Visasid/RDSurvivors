@@ -33,14 +33,6 @@ public class PlayerMovement : MonoBehaviour
         invulnerabilityT -= Time.deltaTime;
     }
 
-
-
-
-
-
-
-
-
     public void GetDamage(int dmg)
     {
         if (invulnerabilityT <= 0)
@@ -50,7 +42,6 @@ public class PlayerMovement : MonoBehaviour
             anim.SetTrigger("Damaged");
 
             invulnerabilityT = 1;
-            float asdasd;
         }
     }
 }
