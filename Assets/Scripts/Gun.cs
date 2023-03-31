@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Gun : MonoBehaviour
@@ -15,6 +16,8 @@ public class Gun : MonoBehaviour
     private float shotTimer = 100;
     private float reloadTimer = 0;
     private bool isReloading = false;
+
+    [SerializeField] private TMP_Text ammoText;
 
     private void Start()
     {
@@ -43,5 +46,8 @@ public class Gun : MonoBehaviour
         }
 
         if (Input.GetKeyDown(KeyCode.R) && !isReloading && ammo != maxAmmo) isReloading = true;
+
+        //UI
+        ammoText.text = ammo.ToString() + "/" + maxAmmo.ToString();
     }
 }
