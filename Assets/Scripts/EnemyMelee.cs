@@ -20,7 +20,6 @@ public class EnemyMelee : MonoBehaviour
     private void FixedUpdate()
     {
         Vector2 velocity = new Vector2((transform.position.x - player.position.x) * moveSpeed, (transform.position.y - player.position.y) * moveSpeed).normalized;
-
         rb.velocity = -velocity;
     }
     private void OnCollisionStay2D(Collision2D other)
