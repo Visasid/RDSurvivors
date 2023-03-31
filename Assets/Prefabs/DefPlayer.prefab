@@ -797,6 +797,7 @@ MonoBehaviour:
   maxAmmo: 8
   damage: 4
   shotCD: 1
+  reloadTime: 3
   shotPoint: {fileID: 1887695463544188907}
   ammo: 0
 --- !u!1 &5357312506931147081
