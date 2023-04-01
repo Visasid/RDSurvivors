@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     public int maxHealth;
 
     public float xp;
+    public float pickupRange;
     [SerializeField] private float maxXp;
     [SerializeField] private int level = 0;
 

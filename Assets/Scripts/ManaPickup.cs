@@ -7,6 +7,7 @@ public class ManaPickup : MonoBehaviour
 {
     private Transform player;
     private float speed = 2;
+    private bool isPicking = false;
 
     private void Start()
     {
@@ -14,9 +15,12 @@ public class ManaPickup : MonoBehaviour
     }
     private void Update()
     {
-        speed += Time.deltaTime;
-
-        transform.position = Vector3.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
+        if (isPicking) speed += Time.deltaTime;
+        if (player.GetComponent<PlayerMovement>().pickupRange >= Vector3.Distance(transform.position, player.position) || isPicking)
+        {
+            isPicking = true;
+            transform.position = Vector3.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
+        }
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
