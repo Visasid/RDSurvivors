@@ -14,7 +14,9 @@ public class EnemyMelee : MonoBehaviour
     private float deathTimer;
     private bool isDead = false;
     [SerializeField] private GameObject xpDrop;
+    [SerializeField] private GameObject splat;
     private SpriteRenderer sprite;
+    private float splatTimer = 0;
 
     private void Start()
     {
@@ -22,7 +24,7 @@ public class EnemyMelee : MonoBehaviour
         player = GameObject.FindWithTag("Player").transform;
         anim = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
-        if (Vector3.Distance(transform.position, player.position) <= 7.5f) Destroy(gameObject);
+        if (transform.position.x > 38 || transform.position.x < -38 || transform.position.y > 28 || transform.position.y < -28) Destroy(gameObject);
     }
 
     private void FixedUpdate()
@@ -31,6 +33,13 @@ public class EnemyMelee : MonoBehaviour
         if (!isDead) rb.velocity = -velocity;
         else if (isDead && deathTimer >= 1) Destroy(gameObject);
         if (isDead) deathTimer += Time.deltaTime;
+
+        splatTimer += Time.deltaTime;
+        if (splat != null && splatTimer >= 0.3f && !isDead)
+        {
+            Instantiate(splat, new Vector2(transform.position.x, transform.position.y - 0.15f), Quaternion.Euler(0, 0, Random.Range(-360f, 360f)));
+            splatTimer = 0;
+        }
 
         //Color update
         sprite.color = new Color(1, sprite.color.g + Time.deltaTime, sprite.color.g + Time.deltaTime);

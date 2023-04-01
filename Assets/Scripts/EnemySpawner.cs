@@ -42,16 +42,16 @@ public class EnemySpawner : MonoBehaviour
         switch (a)
         {
             case 0:
-                Instantiate(min5Enemy, new Vector2(Random.Range(-38, 38), Random.Range(-28, 28)), Quaternion.identity);
+                Instantiate(min5Enemy, new Vector2(player.position.x + Random.Range(-7.5f, 7.5f), player.position.y + Random.Range(-4.5f, 4.5f)), Quaternion.identity);
                 break;
             case 1:
-                Instantiate(min5Enemy, new Vector2(Random.Range(-38, 38), Random.Range(-28, 28)), Quaternion.identity);
+                Instantiate(min5Enemy, new Vector2(player.position.x + Random.Range(-7.5f, 7.5f), player.position.y + Random.Range(-4.5f, 4.5f)), Quaternion.identity);
                 break;
             case 2:
-                Instantiate(min5Enemy, new Vector2(Random.Range(-38, 38), Random.Range(-28, 28)), Quaternion.identity);
+                Instantiate(min5Enemy, new Vector2(player.position.x + Random.Range(-7.5f, 7.5f), player.position.y + Random.Range(-4.5f, 4.5f)), Quaternion.identity);
                 break;
             case 3:
-                Instantiate(min5Enemy, new Vector2(Random.Range(-38, 38), Random.Range(-28, 28)), Quaternion.identity);
+                Instantiate(min5Enemy, new Vector2(player.position.x + Random.Range(-7.5f, 7.5f), player.position.y + Random.Range(-4.5f, 4.5f)), Quaternion.identity);
                 break;
         }
             

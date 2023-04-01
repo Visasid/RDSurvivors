@@ -74,9 +74,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1922226667
-  m_SortingLayer: 1
-  m_SortingOrder: 1
+  m_SortingLayerID: 980331567
+  m_SortingLayer: 2
+  m_SortingOrder: -1
   m_Sprite: {fileID: -1526667047, guid: e5f29737515362545bf0de9d70655e81, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -104,6 +104,7 @@ MonoBehaviour:
   moveSpeed: 1
   damage: 10
   xpDrop: {fileID: 8215870201798046250, guid: 070a5ed884866ab4aa91b1da449b1c87, type: 3}
+  splat: {fileID: 1379661226383964594, guid: f2c3e7e5366e03d48af7ad1b84e0489a, type: 3}
 --- !u!95 &7237891622827189939
 Animator:
   serializedVersion: 4
