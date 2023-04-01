@@ -103,6 +103,7 @@ MonoBehaviour:
   health: 10
   moveSpeed: 1
   damage: 10
+  xpDrop: {fileID: 8215870201798046250, guid: 070a5ed884866ab4aa91b1da449b1c87, type: 3}
 --- !u!95 &7237891622827189939
 Animator:
   serializedVersion: 4
