@@ -13,6 +13,7 @@ public class EnemyMelee : MonoBehaviour
     private Rigidbody2D rb;
     private float deathTimer;
     private bool isDead = false;
+    [SerializeField] private GameObject xpDrop;
 
     private void Start()
     {
@@ -39,6 +40,7 @@ public class EnemyMelee : MonoBehaviour
         if (health <= 0)
         {
             anim.SetTrigger("Death");
+            Instantiate(xpDrop, transform.position, Quaternion.identity);
             isDead = true;
         }
     }

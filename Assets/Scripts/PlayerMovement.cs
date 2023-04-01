@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public int health;
     public int maxHealth;
 
-    [SerializeField] private float xp;
+    public float xp;
     [SerializeField] private float maxXp;
 
     [SerializeField]

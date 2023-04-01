@@ -375,9 +375,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   maxHealth: 100
+  xp: 0
+  maxXp: 10
   speed: 3
   healthBar: {fileID: 0}
   healthTxt: {fileID: 0}
+  xpBar: {fileID: 0}
 --- !u!95 &317671216653247402
 Animator:
   serializedVersion: 4
