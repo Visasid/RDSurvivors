@@ -376,7 +376,7 @@ MonoBehaviour:
   health: 100
   maxHealth: 100
   xp: 0
-  maxXp: 10
+  maxXp: 8
   level: 0
   speed: 3
   healthBar: {fileID: 0}
