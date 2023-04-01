@@ -14,12 +14,14 @@ public class EnemyMelee : MonoBehaviour
     private float deathTimer;
     private bool isDead = false;
     [SerializeField] private GameObject xpDrop;
+    private SpriteRenderer sprite;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindWithTag("Player").transform;
         anim = GetComponent<Animator>();
+        sprite = GetComponent<SpriteRenderer>();
     }
 
     private void FixedUpdate()
@@ -28,6 +30,10 @@ public class EnemyMelee : MonoBehaviour
         if (!isDead) rb.velocity = -velocity;
         else if (isDead && deathTimer >= 1) Destroy(gameObject);
         if (isDead) deathTimer += Time.deltaTime;
+
+        //Color update
+        sprite.color = new Color(1, sprite.color.g + Time.deltaTime, sprite.color.g + Time.deltaTime);
+
     }
     private void OnCollisionStay2D(Collision2D other)
     {
@@ -37,6 +43,7 @@ public class EnemyMelee : MonoBehaviour
     public void GetDamage(int dmg)
     {
         health -= dmg;
+        sprite.color = new Color(1, 0, 0);
         if (health <= 0)
         {
             anim.SetTrigger("Death");
