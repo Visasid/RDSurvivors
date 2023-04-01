@@ -22,6 +22,7 @@ public class EnemyMelee : MonoBehaviour
         player = GameObject.FindWithTag("Player").transform;
         anim = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
+        if (Vector3.Distance(transform.position, player.position) <= 7.5f) Destroy(gameObject);
     }
 
     private void FixedUpdate()
@@ -38,6 +39,7 @@ public class EnemyMelee : MonoBehaviour
     private void OnCollisionStay2D(Collision2D other)
     {
         if (other.transform.CompareTag("Player") && !isDead) other.gameObject.GetComponent<PlayerMovement>().GetDamage(damage);
+        else if (other.transform.CompareTag("Obstacle")) Physics2D.IgnoreCollision(GetComponent<Collider2D>(), other.gameObject.GetComponent<Collider2D>());
     }
 
     public void GetDamage(int dmg)
