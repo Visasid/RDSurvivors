@@ -9,6 +9,9 @@ public class PlayerMovement : MonoBehaviour
     public int health;
     public int maxHealth;
 
+    [SerializeField] private float xp;
+    [SerializeField] private float maxXp;
+
     [SerializeField]
     private float speed;
 
@@ -19,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
     //UI
     [SerializeField] private Slider healthBar;
     [SerializeField] private TMP_Text healthTxt;
+    [SerializeField] private Slider xpBar;
 
     private void Start()
     {
@@ -42,6 +46,8 @@ public class PlayerMovement : MonoBehaviour
         healthBar.maxValue = maxHealth;
         healthBar.value = health;
         healthTxt.text = health.ToString() + "/" + maxHealth.ToString();
+        xpBar.value = xp;
+        xpBar.maxValue = maxXp;
     }
 
     public void GetDamage(int dmg)
