@@ -12,6 +12,8 @@ public class Gun : MonoBehaviour
     public float shotCD;
     public float reloadTime;
     [SerializeField] private Transform shotPoint;
+    [SerializeField] private AudioClip sound;
+    [SerializeField] private GameObject soundSource;
 
     public float ammo;
     private float shotTimer = 100;
@@ -48,9 +50,13 @@ public class Gun : MonoBehaviour
         {
             shotTimer = 0;
             Bullet bul = Instantiate(bullet, shotPoint.position, shotPoint.rotation).GetComponent<Bullet>();
+            AudioSource source = Instantiate(soundSource, transform.position, Quaternion.identity).GetComponent<AudioSource>();
+            source.clip = sound;
+            source.Play();
             bul.damage = damage;
             ammo -= 1;
         }
+        else if (!isReloading && ammo == 0) isReloading = true;
 
         if (Input.GetKeyDown(KeyCode.R) && !isReloading && ammo != maxAmmo) isReloading = true;
 
