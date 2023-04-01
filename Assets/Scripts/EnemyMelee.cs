@@ -40,7 +40,7 @@ public class EnemyMelee : MonoBehaviour
         if (health <= 0)
         {
             anim.SetTrigger("Death");
-            Instantiate(xpDrop, transform.position, Quaternion.identity);
+            if (!isDead) Instantiate(xpDrop, transform.position, Quaternion.identity);
             isDead = true;
         }
     }
