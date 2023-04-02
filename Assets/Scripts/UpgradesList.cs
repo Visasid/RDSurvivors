@@ -19,7 +19,7 @@ public class UpgradesList : MonoBehaviour
     [SerializeField] private TMP_Text[] upDescs;
     [SerializeField] private Sprite[] images;
 
-    private int upgradesCount = 5;
+    private int upgradesCount = 6;
 
     private void Start()
     {
@@ -65,6 +65,7 @@ public class UpgradesList : MonoBehaviour
     //3 - Extended Mag: +2 max ammo
     //4 - Expansive Bullets: +10% damage
     //5 - Fast Hands: +10% reload speed
+    //6 - Magnet: +25% pickup range
     private void ListUpdate()
     {
         for (int i = 0; i < 3; i++)
@@ -99,6 +100,12 @@ public class UpgradesList : MonoBehaviour
                 upDescs[i].text = "+10% reload speed";
                 upImgs[i].sprite = images[i];
             }
+            else if (upgrade[i] == 6)
+            {
+                upNames[i].text = "Magnet";
+                upDescs[i].text = "+25% pickup range";
+                upImgs[i].sprite = images[i];
+            }
         }
         upgradeList.SetActive(true);
     }
@@ -114,6 +121,7 @@ public class UpgradesList : MonoBehaviour
         else if (upgrade[grade - 1] == 3) gun.maxAmmo += 2;
         else if (upgrade[grade - 1] == 4) gun.damage += gun.damage * 0.25f;
         else if (upgrade[grade - 1] == 5) gun.reloadTime -= gun.reloadTime * 0.1f;
+        else if (upgrade[grade - 1] == 6) player.pickupRange += player.pickupRange * 0.25f;
         upgradeList.SetActive(false);
         Time.timeScale = 1;
     }
