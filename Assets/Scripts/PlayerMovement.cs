@@ -59,15 +59,10 @@ public class PlayerMovement : MonoBehaviour
         if (xp >= maxXp)
         {
             xp = 0;
-            maxXp *= 1.5f;
+            maxXp *= 1.25f;
             level++;
-            GetUpgrade();
+            upgrades.SetUpgrades();
         }
-    }
-
-    public void GetUpgrade()
-    {
-        upgrades.SetUpgrades();
     }
 
     public void GetDamage(int dmg)

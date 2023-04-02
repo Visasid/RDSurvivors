@@ -90,7 +90,7 @@ public class UpgradesList : MonoBehaviour
             else if (upgrade[i] == 4)
             {
                 upNames[i].text = "Expansive Bullets";
-                upDescs[i].text = "+10% damage";
+                upDescs[i].text = "+25% damage";
                 upImgs[i].sprite = images[i];
             }
             else if (upgrade[i] == 5)
@@ -112,7 +112,7 @@ public class UpgradesList : MonoBehaviour
             player.health += (int)(player.maxHealth * 0.1f);
         }
         else if (upgrade[grade - 1] == 3) gun.maxAmmo += 2;
-        else if (upgrade[grade - 1] == 4) gun.damage += (int)(gun.damage * 0.1f);
+        else if (upgrade[grade - 1] == 4) gun.damage += gun.damage * 0.25f;
         else if (upgrade[grade - 1] == 5) gun.reloadTime -= gun.reloadTime * 0.1f;
         upgradeList.SetActive(false);
         Time.timeScale = 1;
