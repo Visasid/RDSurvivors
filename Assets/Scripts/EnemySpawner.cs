@@ -36,7 +36,7 @@ public class EnemySpawner : MonoBehaviour
             if (timerM > 3 && timerM < 5) spawnRate = 2;
         }
 
-        timerUI.text = timerM.ToString() + ':' + timerS.ToString();
+        timerUI.text = timerM.ToString("00") + ':' + ((int)timerS).ToString("00");
     }
 
     private void SpawnEnemy(GameObject enemy)
