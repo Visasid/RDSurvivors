@@ -72,37 +72,37 @@ public class UpgradesList : MonoBehaviour
             {
                 upNames[i].text = "Enchanced Automatics";
                 upDescs[i].text = "+15% shot speed";
-                upImgs[i].sprite = images[i];
+                upImgs[i].sprite = images[upgrade[i] - 1];
             }
             else if (upgrade[i] == 2)
             {
                 upNames[i].text = "Iron Skin";
                 upDescs[i].text = "+10% health";
-                upImgs[i].sprite = images[i];
+                upImgs[i].sprite = images[upgrade[i] - 1];
             }
             else if (upgrade[i] == 3)
             {
                 upNames[i].text = "Extended Mag";
                 upDescs[i].text = "+2 max ammo";
-                upImgs[i].sprite = images[i];
+                upImgs[i].sprite = images[upgrade[i] - 1];
             }
             else if (upgrade[i] == 4)
             {
                 upNames[i].text = "Expansive Bullets";
                 upDescs[i].text = "+25% damage";
-                upImgs[i].sprite = images[i];
+                upImgs[i].sprite = images[upgrade[i] - 1];
             }
             else if (upgrade[i] == 5)
             {
                 upNames[i].text = "Fast Hands";
                 upDescs[i].text = "+10% reload speed";
-                upImgs[i].sprite = images[i];
+                upImgs[i].sprite = images[upgrade[i] - 1];
             }
             else if (upgrade[i] == 6)
             {
                 upNames[i].text = "Magnet";
                 upDescs[i].text = "+25% pickup range";
-                upImgs[i].sprite = images[i];
+                upImgs[i].sprite = images[upgrade[i] - 1];
             }
         }
         upgradeList.SetActive(true);
