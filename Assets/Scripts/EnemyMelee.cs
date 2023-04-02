@@ -59,6 +59,7 @@ public class EnemyMelee : MonoBehaviour
         {
             anim.SetTrigger("Death");
             if (!isDead) Instantiate(xpDrop, transform.position, Quaternion.identity);
+            Destroy(GetComponent<Collider2D>());
             isDead = true;
         }
     }
