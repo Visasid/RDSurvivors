@@ -280,6 +280,7 @@ GameObject:
   - component: {fileID: 317671216653247397}
   - component: {fileID: 317671216653247396}
   - component: {fileID: 317671216653247403}
+  - component: {fileID: 5825416661102042438}
   - component: {fileID: 317671216653247402}
   - component: {fileID: 317671216653247401}
   - component: {fileID: 317671216653247400}
@@ -384,6 +385,28 @@ MonoBehaviour:
   healthTxt: {fileID: 0}
   xpBar: {fileID: 0}
   levelTxt: {fileID: 0}
+--- !u!114 &5825416661102042438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 317671216653247399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddeea9873489cd347b2fea4895231faa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upgradeList: {fileID: 0}
+  upImgs: []
+  upNames: []
+  upDescs: []
+  images:
+  - {fileID: 21300000, guid: 5e08e668e51170442a7c1bf3f5715dd3, type: 3}
+  - {fileID: 21300000, guid: 5e08e668e51170442a7c1bf3f5715dd3, type: 3}
+  - {fileID: 21300000, guid: 5e08e668e51170442a7c1bf3f5715dd3, type: 3}
+  - {fileID: 21300000, guid: 5e08e668e51170442a7c1bf3f5715dd3, type: 3}
+  - {fileID: 21300000, guid: 5e08e668e51170442a7c1bf3f5715dd3, type: 3}
 --- !u!95 &317671216653247402
 Animator:
   serializedVersion: 4

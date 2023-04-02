@@ -20,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private Animator anim;
     private float invulnerabilityT = 0;
+    private UpgradesList upgrades;
 
     //UI
     [SerializeField] private Slider healthBar;
@@ -31,6 +32,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        upgrades = GetComponent<UpgradesList>();
     }
 
     private void FixedUpdate()
@@ -65,7 +67,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void GetUpgrade()
     {
-
+        upgrades.SetUpgrades();
     }
 
     public void GetDamage(int dmg)
