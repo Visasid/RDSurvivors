@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Net.Http.Headers;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -37,19 +38,21 @@ public class UpgradesList : MonoBehaviour
     public void SetUpgrades()
     {
         upgrade[0] = Random.Range(1, upgradesCount);
-        for (int i = 1; i < upgradesCount; i++)
+        while (true)
         {
-            if (upgrade[0] != i)
+            int x = Random.Range(1, upgradesCount);
+            if (upgrade[0] != x)
             {
-                upgrade[1] = i;
+                upgrade[1] = x;
                 break;
             }
         }
-        for (int i = 1; i < upgradesCount; i++)
+        while (true)
         {
-            if (upgrade[0] != i && upgrade[1] != i)
+            int x = Random.Range(1, upgradesCount);
+            if (upgrade[0] != x && upgrade[1] != x)
             {
-                upgrade[2] = i;
+                upgrade[2] = x;
                 break;
             }
         }
@@ -102,6 +105,16 @@ public class UpgradesList : MonoBehaviour
 
     public void SelectUpgrade(int grade)
     {
-
+        if (upgrade[grade - 1] == 1) gun.shotCD -= gun.shotCD * 0.15f;
+        else if (upgrade[grade - 1] == 2)
+        {
+            player.maxHealth += (int)(player.maxHealth * 0.1f);
+            player.health += (int)(player.maxHealth * 0.1f);
+        }
+        else if (upgrade[grade - 1] == 3) gun.maxAmmo += 2;
+        else if (upgrade[grade - 1] == 4) gun.damage += (int)(gun.damage * 0.1f);
+        else if (upgrade[grade - 1] == 5) gun.reloadTime -= gun.reloadTime * 0.1f;
+        upgradeList.SetActive(false);
+        Time.timeScale = 1;
     }
 }

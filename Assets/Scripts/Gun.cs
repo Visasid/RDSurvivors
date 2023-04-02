@@ -8,7 +8,7 @@ public class Gun : MonoBehaviour
 {
     [SerializeField] private GameObject bullet;
     public int maxAmmo;
-    public int damage;
+    public float damage;
     public float shotCD;
     public float reloadTime;
     [SerializeField] private Transform shotPoint;

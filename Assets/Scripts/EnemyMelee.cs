@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyMelee : MonoBehaviour
 {
-    public int health;
+    public float health;
     public float moveSpeed;
     public int damage;
 
@@ -51,7 +51,7 @@ public class EnemyMelee : MonoBehaviour
         else if (other.transform.CompareTag("Obstacle")) Physics2D.IgnoreCollision(GetComponent<Collider2D>(), other.gameObject.GetComponent<Collider2D>());
     }
 
-    public void GetDamage(int dmg)
+    public void GetDamage(float dmg)
     {
         health -= dmg;
         sprite.color = new Color(1, 0, 0);
