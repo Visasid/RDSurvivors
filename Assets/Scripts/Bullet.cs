@@ -22,6 +22,11 @@ public class Bullet : MonoBehaviour
                 enemy.GetDamage(damage);
                 Destroy(gameObject);
             }
+            else if(other.gameObject.TryGetComponent<EnemyRanged>(out EnemyRanged enemyR))
+            {
+                enemyR.GetDamage(damage);
+                Destroy(gameObject);
+            }
         }
     }
 }
