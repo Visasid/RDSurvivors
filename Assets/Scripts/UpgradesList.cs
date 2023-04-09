@@ -115,6 +115,7 @@ public class UpgradesList : MonoBehaviour
         {
             player.maxHealth += (int)(player.maxHealth * 0.1f);
             player.health += (int)(player.maxHealth * 0.1f);
+            if (player.health > player.maxHealth) player.health = player.maxHealth;
         }
         else if (upgrade[grade - 1] == 3) gun.maxAmmo += 2;
         else if (upgrade[grade - 1] == 4) gun.damage += gun.damage * 0.25f;
