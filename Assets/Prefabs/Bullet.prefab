@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 6443408666073477431}
   - component: {fileID: 6443408666073477430}
   - component: {fileID: 6443408666073477417}
-  - component: {fileID: 6443408666073477416}
   - component: {fileID: 6468353226767434511}
+  - component: {fileID: 4438406362666657913}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Untagged
@@ -76,8 +76,8 @@ SpriteRenderer:
   m_SortingLayerID: 980331567
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1066900286a95934d8ecc3c559e08c18, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: d8b6228994b074d06a94a600313a18c9, type: 3}
+  m_Color: {r: 0.9659265, g: 1, b: 0.23113209, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -101,32 +101,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 0
   speed: 8
---- !u!61 &6443408666073477416
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6443408666073477419}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.1, y: 0.05}
-    newSize: {x: 0.4, y: 0.2}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.1, y: 0.05}
-  m_EdgeRadius: 0
 --- !u!114 &6468353226767434511
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,3 +114,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   afterT: 5
+--- !u!58 &4438406362666657913
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6443408666073477419}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.04
