@@ -103,6 +103,7 @@ MonoBehaviour:
   damage: 10
   moveSpeed: 0.5
   bullet: {fileID: 1391506856931348716, guid: cd389590973a84886824c4fd4038ad2e, type: 3}
+  xpDrop: {fileID: 8215870201798046250, guid: 070a5ed884866ab4aa91b1da449b1c87, type: 3}
 --- !u!61 &8180746792519675736
 BoxCollider2D:
   m_ObjectHideFlags: 0

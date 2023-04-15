@@ -5,10 +5,11 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public GameObject min5Enemy;
+    [SerializeField] private GameObject slime;
+    [SerializeField] private GameObject skull;
     [SerializeField] private TMP_Text timerUI;
 
-    private float spawnRate = 3;
+    private float spawnRate = 2;
     private float timerS = 0;
     private float timerM = 0;
     private float spawnT = 3;
@@ -27,7 +28,8 @@ public class EnemySpawner : MonoBehaviour
         if (spawnT <= 0)
         {
             spawnT = spawnRate;
-            SpawnEnemy(min5Enemy);
+            SpawnEnemy(slime);
+            if (timerM >= 1) SpawnEnemy(skull);
         }
         if (timerS >= 60)
         {

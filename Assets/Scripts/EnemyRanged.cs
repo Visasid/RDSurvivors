@@ -14,6 +14,7 @@ public class EnemyRanged : MonoBehaviour
     private bool isLookingRight = false;
     private SpriteRenderer sprite;
     private float angle;
+    [SerializeField] private GameObject xpDrop;
 
     //ShootTimers
     private float shootCD = 1.5f;
@@ -59,6 +60,10 @@ public class EnemyRanged : MonoBehaviour
     {
         hp -= dmg;
         sprite.color = new Color(1, 0, 0);
-        if (hp <= 0) Destroy(gameObject);
-    }
+        if (hp <= 0)
+        {
+            Destroy(gameObject);
+            Instantiate(xpDrop, transform.position, Quaternion.identity);
+        }
+        }
 }
